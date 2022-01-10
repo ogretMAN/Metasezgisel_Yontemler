@@ -9,7 +9,6 @@ import time
 from random import random, randrange
 from tkinter import *
 import numpy as np
-import matplotlib.pyplot as plt
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg, 
 NavigationToolbar2Tk)
@@ -259,6 +258,7 @@ def goster(kurtlar):
     
     plot1.legend()
     canvas.draw()
+    canvas.flush_events()
     
 
 def sirala(kurtlar):
@@ -294,11 +294,7 @@ def avlan():
 
     Returns
     -------
-    tempN : Tüm gri kurt populasyonu
-    tempXa : Alfa Kurdu
-    tempXb : Beta Kurdu
-    tempXd : Delta Kurdu
-
+    None
     """
     L11.config(text="")
     L10.config(text="Av Başladı")
@@ -340,8 +336,6 @@ def avlan():
     xKnm = str(round(tempXa[0],2))
     yKnm = str(round(amacFonk(tempXa[0]), 2))
     L11.config(text="x: " + xKnm + " y: " + yKnm + "m")
-        
-    return tempN, tempXa, tempXb, tempXd
 
 
 # [+] Tkinter Python GUI Widget'ler
